@@ -1,1 +1,1 @@
-Pigs gamd GUI
+Pigs game GUI
