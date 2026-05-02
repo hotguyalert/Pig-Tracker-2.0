@@ -13,7 +13,6 @@
     --green: #06d6a0;
     --blue: #118ab2;
     --dark: #1a1a2e;
-    --card: #ffffff;
     --radius: 20px;
   }
 
@@ -21,14 +20,13 @@
 
   body {
     font-family: 'Nunito', sans-serif;
-    background: #ffeaf3;
-    background-image:
-      radial-gradient(circle at 20% 20%, #ffcde0 0%, transparent 40%),
-      radial-gradient(circle at 80% 80%, #ffe0c8 0%, transparent 40%),
-      radial-gradient(circle at 60% 10%, #ffd6f0 0%, transparent 30%);
     min-height: 100vh;
     padding: 20px;
     color: var(--dark);
+    background-color: #ffeaf3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='10' y='40' font-size='28' opacity='0.13'%3E%F0%9F%90%B7%3C/text%3E%3Ctext x='65' y='85' font-size='22' opacity='0.13'%3E%F0%9F%90%B7%3C/text%3E%3Ctext x='55' y='38' font-size='26' fill='%23118ab2' opacity='0.18' font-family='sans-serif'%3E%E2%9A%A1%3C/text%3E%3Ctext x='5' y='95' font-size='22' fill='%23118ab2' opacity='0.18' font-family='sans-serif'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 120px 120px;
   }
 
   h1 {
@@ -100,7 +98,8 @@
   }
 
   .player-card {
-    background: #fff;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(4px);
     border-radius: var(--radius);
     padding: 22px 22px 18px;
     box-shadow: 0 6px 0 #ffc8da, 0 10px 30px rgba(255,107,157,.12);
@@ -154,7 +153,7 @@
 
   .score-display {
     text-align: center;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
   }
 
   .score-number {
@@ -163,7 +162,6 @@
     line-height: 1;
     color: var(--pink);
     text-shadow: 2px 2px 0 rgba(255,107,157,.25);
-    transition: transform .2s cubic-bezier(.34,1.56,.64,1), color .2s;
   }
 
   .score-number.bump {
@@ -213,11 +211,7 @@
   }
 
   .score-btn:active { transform: scale(.93); filter: brightness(.9); }
-
-  .score-btn .pts {
-    display: block;
-    font-size: 1.1rem;
-  }
+  .score-btn .pts { display: block; font-size: 1.1rem; }
 
   .s1  { background:#ffeef5; color:#e05575; box-shadow:0 3px 0 #ffb3cc; }
   .s5  { background:#fff3e0; color:#e07a00; box-shadow:0 3px 0 #ffd08a; }
@@ -225,7 +219,6 @@
   .s15 { background:#e8f4ff; color:#0070b0; box-shadow:0 3px 0 #90caff; }
   .s20 { background:#f3e8ff; color:#7030b0; box-shadow:0 3px 0 #c8a0f0; }
   .sog { background:#fffbe6; color:#b08000; box-shadow:0 3px 0 #ffe066; }
-
   .score-btn:active { box-shadow: none !important; transform: translateY(3px) scale(.97); }
 
   .card-actions {
@@ -389,7 +382,6 @@ function addPlayer() {
   if (!name) return;
   const color = COLORS[colorIdx % COLORS.length];
   colorIdx++;
-  // scoreAtTurnStart tracks score before current turn began
   players.push({ name, score: 0, turnPoints: 0, scoreAtTurnStart: 0, history: [], color });
   input.value = '';
   renderPlayers();
@@ -477,7 +469,6 @@ function bankTurn(idx) {
 
 function pigOut(idx) {
   const p = players[idx];
-  // Lose all points accumulated this turn, score reverts to start of turn
   p.score = p.scoreAtTurnStart;
   p.turnPoints = 0;
   p.history.push('PIG OUT');
@@ -486,7 +477,6 @@ function pigOut(idx) {
 
 function oinker(idx) {
   const p = players[idx];
-  // Lose ALL points entirely
   p.score = 0;
   p.scoreAtTurnStart = 0;
   p.turnPoints = 0;
@@ -497,7 +487,6 @@ function oinker(idx) {
 function undoTurn(idx) {
   const p = players[idx];
   if (p.turnPoints === 0) return;
-  // Revert score back to what it was at the start of this turn
   p.score = p.scoreAtTurnStart;
   p.turnPoints = 0;
   renderPlayers();
