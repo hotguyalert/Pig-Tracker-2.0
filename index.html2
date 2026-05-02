@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐷 Toss the Pigs</title>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ff6b9d;
+    --peach: #ff9472;
+    --yellow: #ffd166;
+    --green: #06d6a0;
+    --blue: #118ab2;
+    --dark: #1a1a2e;
+    --card: #ffffff;
+    --radius: 20px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #ffeaf3;
+    background-image:
+      radial-gradient(circle at 20% 20%, #ffcde0 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, #ffe0c8 0%, transparent 40%),
+      radial-gradient(circle at 60% 10%, #ffd6f0 0%, transparent 30%);
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--dark);
+  }
+
+  h1 {
+    font-family: 'Lilita One', cursive;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    text-align: center;
+    color: var(--pink);
+    text-shadow: 3px 3px 0 #ff​​​​​​​​​​​​​​​​
