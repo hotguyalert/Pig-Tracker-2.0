@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,363 +8,363 @@
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --pink: #ff6b9d;
-    --peach: #ff9472;
-    --yellow: #ffd166;
-    --green: #06d6a0;
-    --blue: #118ab2;
+    --blue: #1565c0;
+    --blue-light: #1e88e5;
+    --blue-dark: #0d47a1;
+    --blue-pale: #e3f0ff;
+    --black: #0f0f0f;
     --dark: #1a1a2e;
+    --white: #ffffff;
+    --grey: #e8edf5;
     --radius: 20px;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+- { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'Nunito', sans-serif;
-    min-height: 100vh;
-    padding: 20px;
-    color: var(--dark);
-    background-color: #ffeaf3;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='10' y='40' font-size='28' opacity='0.13'%3E%F0%9F%90%B7%3C/text%3E%3Ctext x='65' y='85' font-size='22' opacity='0.13'%3E%F0%9F%90%B7%3C/text%3E%3Ctext x='55' y='38' font-size='26' fill='%23118ab2' opacity='0.18' font-family='sans-serif'%3E%E2%9A%A1%3C/text%3E%3Ctext x='5' y='95' font-size='22' fill='%23118ab2' opacity='0.18' font-family='sans-serif'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 120px 120px;
-  }
+body {
+font-family: ‘Nunito’, sans-serif;
+min-height: 100vh;
+padding: 20px;
+color: var(–dark);
+background-color: #ddeeff;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘120’ height=‘120’%3E%3Ctext x=‘10’ y=‘40’ font-size=‘28’ opacity=‘0.12’%3E%F0%9F%90%B7%3C/text%3E%3Ctext x=‘65’ y=‘85’ font-size=‘22’ opacity=‘0.12’%3E%F0%9F%90%B7%3C/text%3E%3Ctext x=‘55’ y=‘38’ font-size=‘26’ fill=’%230d47a1’ opacity=‘0.2’ font-family=‘sans-serif’%3E%E2%9A%A1%3C/text%3E%3Ctext x=‘5’ y=‘95’ font-size=‘22’ fill=’%230d47a1’ opacity=‘0.2’ font-family=‘sans-serif’%3E%E2%9A%A1%3C/text%3E%3C/svg%3E”);
+background-repeat: repeat;
+background-size: 120px 120px;
+}
 
-  h1 {
-    font-family: 'Lilita One', cursive;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    text-align: center;
-    color: var(--pink);
-    text-shadow: 3px 3px 0 #ff9db8, 5px 5px 0 rgba(255,107,157,0.2);
-    margin-bottom: 6px;
-    letter-spacing: 1px;
-  }
+h1 {
+font-family: ‘Lilita One’, cursive;
+font-size: clamp(2rem, 6vw, 3.5rem);
+text-align: center;
+color: var(–blue-dark);
+text-shadow: 3px 3px 0 #90b8e8, 5px 5px 0 rgba(21,101,192,0.15);
+margin-bottom: 6px;
+letter-spacing: 1px;
+}
 
-  .subtitle {
-    text-align: center;
-    color: #b56a80;
-    font-weight: 600;
-    margin-bottom: 28px;
-    font-size: 1rem;
-  }
+.subtitle {
+text-align: center;
+color: #1a3a6e;
+font-weight: 600;
+margin-bottom: 28px;
+font-size: 1rem;
+}
 
-  .add-bar {
-    display: flex;
-    gap: 10px;
-    max-width: 480px;
-    margin: 0 auto 32px;
-  }
+.add-bar {
+display: flex;
+gap: 10px;
+max-width: 480px;
+margin: 0 auto 32px;
+}
 
-  .add-bar input {
-    flex: 1;
-    padding: 14px 18px;
-    border-radius: 50px;
-    border: 2px solid #ffb3cb;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    background: #fff;
-    outline: none;
-    color: var(--dark);
-    transition: border-color .2s;
-  }
-  .add-bar input::placeholder { color: #f0a0b8; }
-  .add-bar input:focus { border-color: var(--pink); }
+.add-bar input {
+flex: 1;
+padding: 14px 18px;
+border-radius: 50px;
+border: 2px solid #90b8e8;
+font-family: ‘Nunito’, sans-serif;
+font-size: 1rem;
+font-weight: 700;
+background: var(–white);
+outline: none;
+color: var(–dark);
+transition: border-color .2s;
+}
+.add-bar input::placeholder { color: #90b8e8; }
+.add-bar input:focus { border-color: var(–blue); }
 
-  .btn {
-    padding: 14px 22px;
-    border-radius: 50px;
-    border: none;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: .95rem;
-    cursor: pointer;
-    transition: transform .1s, box-shadow .1s;
-  }
-  .btn:active { transform: scale(.96); }
+.btn {
+padding: 14px 22px;
+border-radius: 50px;
+border: none;
+font-family: ‘Nunito’, sans-serif;
+font-weight: 800;
+font-size: .95rem;
+cursor: pointer;
+transition: transform .1s, box-shadow .1s;
+}
+.btn:active { transform: scale(.96); }
 
-  .btn-add {
-    background: var(--pink);
-    color: #fff;
-    box-shadow: 0 4px 0 #c04070;
-  }
-  .btn-add:active { box-shadow: 0 1px 0 #c04070; transform: translateY(3px); }
+.btn-add {
+background: var(–blue);
+color: var(–white);
+box-shadow: 0 4px 0 var(–blue-dark);
+}
+.btn-add:active { box-shadow: 0 1px 0 var(–blue-dark); transform: translateY(3px); }
 
-  #players {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto 30px;
-  }
+#players {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 20px;
+max-width: 1100px;
+margin: 0 auto 30px;
+}
 
-  .player-card {
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(4px);
-    border-radius: var(--radius);
-    padding: 22px 22px 18px;
-    box-shadow: 0 6px 0 #ffc8da, 0 10px 30px rgba(255,107,157,.12);
-    position: relative;
-    animation: popIn .35s cubic-bezier(.34,1.56,.64,1) both;
-  }
+.player-card {
+background: rgba(255,255,255,0.94);
+backdrop-filter: blur(4px);
+border-radius: var(–radius);
+padding: 22px 22px 18px;
+box-shadow: 0 6px 0 #90b8e8, 0 10px 30px rgba(21,101,192,.13);
+position: relative;
+animation: popIn .35s cubic-bezier(.34,1.56,.64,1) both;
+}
 
-  @keyframes popIn {
-    from { opacity:0; transform:scale(.7) translateY(20px); }
-    to   { opacity:1; transform:scale(1) translateY(0); }
-  }
+@keyframes popIn {
+from { opacity:0; transform:scale(.7) translateY(20px); }
+to   { opacity:1; transform:scale(1) translateY(0); }
+}
 
-  .player-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
+.player-header {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 16px;
+}
 
-  .pig-avatar {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.6rem;
-    flex-shrink: 0;
-    box-shadow: 0 3px 0 rgba(0,0,0,.08);
-  }
+.pig-avatar {
+width: 48px; height: 48px;
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.6rem;
+flex-shrink: 0;
+box-shadow: 0 3px 0 rgba(0,0,0,.10);
+}
 
-  .player-name {
-    font-family: 'Lilita One', cursive;
-    font-size: 1.25rem;
-    color: var(--dark);
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.player-name {
+font-family: ‘Lilita One’, cursive;
+font-size: 1.25rem;
+color: var(–dark);
+flex: 1;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
 
-  .remove-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #dda0b0;
-    font-size: 1.1rem;
-    line-height: 1;
-    padding: 4px;
-    border-radius: 50%;
-    transition: color .2s, background .2s;
-  }
-  .remove-btn:hover { color: #e05575; background: #fff0f3; }
+.remove-btn {
+background: none;
+border: none;
+cursor: pointer;
+color: #90b8e8;
+font-size: 1.1rem;
+line-height: 1;
+padding: 4px;
+border-radius: 50%;
+transition: color .2s, background .2s;
+}
+.remove-btn:hover { color: var(–blue-dark); background: var(–blue-pale); }
 
-  /* Score display — click to edit */
-  .score-display {
-    text-align: center;
-    margin-bottom: 10px;
-  }
+.score-display {
+text-align: center;
+margin-bottom: 10px;
+}
 
-  .score-number {
-    font-family: 'Lilita One', cursive;
-    font-size: 4rem;
-    line-height: 1;
-    color: var(--pink);
-    text-shadow: 2px 2px 0 rgba(255,107,157,.25);
-    cursor: pointer;
-    border-radius: 12px;
-    padding: 4px 10px;
-    display: inline-block;
-    transition: background .2s;
-  }
-  .score-number:hover {
-    background: #fff0f5;
-  }
+.score-number {
+font-family: ‘Lilita One’, cursive;
+font-size: 4rem;
+line-height: 1;
+color: var(–blue);
+text-shadow: 2px 2px 0 rgba(21,101,192,.2);
+cursor: pointer;
+border-radius: 12px;
+padding: 4px 10px;
+display: inline-block;
+transition: background .2s;
+}
+.score-number:hover { background: var(–blue-pale); }
 
-  .score-number.bump {
-    animation: bump .3s cubic-bezier(.34,1.56,.64,1);
-  }
-  @keyframes bump {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.35); }
-    100% { transform: scale(1); }
-  }
+.score-number.bump {
+animation: bump .3s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes bump {
+0%   { transform: scale(1); }
+50%  { transform: scale(1.35); }
+100% { transform: scale(1); }
+}
 
-  /* Editable input that replaces the score number */
-  .score-edit-input {
-    font-family: 'Lilita One', cursive;
-    font-size: 3.5rem;
-    line-height: 1;
-    color: var(--pink);
-    text-align: center;
-    width: 140px;
-    border: 3px solid var(--pink);
-    border-radius: 12px;
-    padding: 4px 10px;
-    outline: none;
-    background: #fff8fb;
-    box-shadow: 0 0 0 4px rgba(255,107,157,.15);
-  }
+.score-edit-input {
+font-family: ‘Lilita One’, cursive;
+font-size: 3.5rem;
+line-height: 1;
+color: var(–blue);
+text-align: center;
+width: 140px;
+border: 3px solid var(–blue);
+border-radius: 12px;
+padding: 4px 10px;
+outline: none;
+background: var(–blue-pale);
+box-shadow: 0 0 0 4px rgba(21,101,192,.12);
+}
 
-  .score-label {
-    font-size: .8rem;
-    font-weight: 700;
-    color: #c0849a;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-top: 2px;
-  }
+.score-label {
+font-size: .8rem;
+font-weight: 700;
+color: #4a7ab5;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+margin-top: 2px;
+}
 
-  .edit-hint {
-    font-size: .7rem;
-    color: #e0a0b8;
-    font-weight: 600;
-    margin-top: 2px;
-  }
+.edit-hint {
+font-size: .7rem;
+color: #90b8e8;
+font-weight: 600;
+margin-top: 2px;
+}
 
-  .turn-points {
-    text-align: center;
-    font-size: .85rem;
-    font-weight: 700;
-    color: #06d6a0;
-    min-height: 20px;
-    margin-bottom: 10px;
-  }
+.turn-points {
+text-align: center;
+font-size: .85rem;
+font-weight: 700;
+color: var(–blue-light);
+min-height: 20px;
+margin-bottom: 10px;
+}
 
-  .score-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 7px;
-    margin-bottom: 10px;
-  }
+.score-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 7px;
+margin-bottom: 10px;
+}
 
-  .score-btn {
-    border: none;
-    border-radius: 12px;
-    padding: 8px 4px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: .78rem;
-    cursor: pointer;
-    transition: transform .1s, filter .1s;
-    line-height: 1.2;
-    text-align: center;
-  }
-  .score-btn:active { transform: scale(.93); filter: brightness(.9); }
-  .score-btn .pts { display: block; font-size: 1.1rem; }
+.score-btn {
+border: none;
+border-radius: 12px;
+padding: 8px 4px;
+font-family: ‘Nunito’, sans-serif;
+font-weight: 800;
+font-size: .78rem;
+cursor: pointer;
+transition: transform .1s, filter .1s;
+line-height: 1.2;
+text-align: center;
+}
+.score-btn:active { transform: scale(.93); filter: brightness(.9); }
+.score-btn .pts { display: block; font-size: 1.1rem; }
 
-  .s1  { background:#ffeef5; color:#e05575; box-shadow:0 3px 0 #ffb3cc; }
-  .s5  { background:#fff3e0; color:#e07a00; box-shadow:0 3px 0 #ffd08a; }
-  .s10 { background:#e8faf3; color:#009e70; box-shadow:0 3px 0 #7de8c0; }
-  .s15 { background:#e8f4ff; color:#0070b0; box-shadow:0 3px 0 #90caff; }
-  .s20 { background:#f3e8ff; color:#7030b0; box-shadow:0 3px 0 #c8a0f0; }
-  .sog { background:#fffbe6; color:#b08000; box-shadow:0 3px 0 #ffe066; }
-  .score-btn:active { box-shadow: none !important; transform: translateY(3px) scale(.97); }
+/* Score buttons: blue tones + black/white accents */
+.s1  { background:#e3f0ff; color:#0d47a1; box-shadow:0 3px 0 #90b8e8; }
+.s5  { background:#e8edf5; color:#1a1a2e; box-shadow:0 3px 0 #b0bcd0; }
+.s10 { background:#1565c0; color:#ffffff; box-shadow:0 3px 0 #0d47a1; }
+.s15 { background:#0d47a1; color:#ffffff; box-shadow:0 3px 0 #082f6e; }
+.s20 { background:#0f0f0f; color:#ffffff; box-shadow:0 3px 0 #000000; }
+.sog { background:#1e88e5; color:#ffffff; box-shadow:0 3px 0 #1565c0; }
+.score-btn:active { box-shadow: none !important; transform: translateY(3px) scale(.97); }
 
-  .card-actions {
-    display: flex;
-    gap: 7px;
-  }
+.card-actions {
+display: flex;
+gap: 7px;
+}
 
-  .btn-undo {
-    flex: 1;
-    background: #f5f5f5;
-    color: #999;
-    box-shadow: 0 3px 0 #ddd;
-    font-size: .85rem;
-  }
-  .btn-undo:active { box-shadow: none; transform: translateY(3px); }
+.btn-undo {
+flex: 1;
+background: #e8edf5;
+color: #555;
+box-shadow: 0 3px 0 #b0bcd0;
+font-size: .85rem;
+}
+.btn-undo:active { box-shadow: none; transform: translateY(3px); }
 
-  .btn-bank {
-    flex: 1;
-    background: #e8faf3;
-    color: #009e70;
-    box-shadow: 0 3px 0 #7de8c0;
-    font-size: .85rem;
-  }
-  .btn-bank:active { box-shadow: none; transform: translateY(3px); }
+.btn-bank {
+flex: 1;
+background: var(–blue);
+color: var(–white);
+box-shadow: 0 3px 0 var(–blue-dark);
+font-size: .85rem;
+}
+.btn-bank:active { box-shadow: none; transform: translateY(3px); }
 
-  .btn-pig {
-    flex: 1;
-    background: #ffe0ec;
-    color: #e05575;
-    box-shadow: 0 3px 0 #f9b0c2;
-    font-size: .85rem;
-  }
-  .btn-pig:active { box-shadow: none; transform: translateY(3px); }
+.btn-pig {
+flex: 1;
+background: var(–black);
+color: var(–white);
+box-shadow: 0 3px 0 #000;
+font-size: .85rem;
+}
+.btn-pig:active { box-shadow: none; transform: translateY(3px); }
 
-  .winner-banner {
-    display: none;
-    text-align: center;
-    background: linear-gradient(135deg, var(--yellow), var(--peach));
-    border-radius: var(--radius);
-    padding: 24px;
-    max-width: 480px;
-    margin: 0 auto 28px;
-    box-shadow: 0 8px 0 #e0a050, 0 14px 40px rgba(255,180,80,.3);
-    animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both;
-  }
+.winner-banner {
+display: none;
+text-align: center;
+background: linear-gradient(135deg, var(–blue), var(–blue-dark));
+border-radius: var(–radius);
+padding: 24px;
+max-width: 480px;
+margin: 0 auto 28px;
+box-shadow: 0 8px 0 #082f6e, 0 14px 40px rgba(21,101,192,.35);
+animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both;
+}
 
-  .winner-banner h2 {
-    font-family: 'Lilita One', cursive;
-    font-size: 2rem;
-    color: #fff;
-    text-shadow: 2px 2px 0 rgba(0,0,0,.15);
-    margin-bottom: 4px;
-  }
+.winner-banner h2 {
+font-family: ‘Lilita One’, cursive;
+font-size: 2rem;
+color: var(–white);
+text-shadow: 2px 2px 0 rgba(0,0,0,.25);
+margin-bottom: 4px;
+}
 
-  .winner-banner p {
-    color: rgba(255,255,255,.9);
-    font-weight: 700;
-    font-size: 1rem;
-  }
+.winner-banner p {
+color: rgba(255,255,255,.9);
+font-weight: 700;
+font-size: 1rem;
+}
 
-  .footer {
-    text-align: center;
-    margin-top: 10px;
-  }
+.footer {
+text-align: center;
+margin-top: 10px;
+}
 
-  .btn-reset {
-    background: #fff;
-    color: #c04870;
-    border: 2px solid #ffb3cb;
-    padding: 12px 28px;
-    font-size: .95rem;
-  }
-  .btn-reset:hover { background: #fff0f5; }
+.btn-reset {
+background: var(–white);
+color: var(–blue-dark);
+border: 2px solid #90b8e8;
+padding: 12px 28px;
+font-size: .95rem;
+}
+.btn-reset:hover { background: var(–blue-pale); }
 
-  .history-line {
-    font-size: .72rem;
-    color: #c0849a;
-    font-weight: 600;
-    text-align: center;
-    min-height: 16px;
-    margin-top: 4px;
-  }
+.history-line {
+font-size: .72rem;
+color: #4a7ab5;
+font-weight: 600;
+text-align: center;
+min-height: 16px;
+margin-top: 4px;
+}
 
-  .target-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    max-width: 380px;
-    margin: 0 auto 24px;
-  }
-  .target-row label { font-weight: 700; color: #b56a80; font-size: .9rem; }
-  .target-row input {
-    width: 80px;
-    padding: 8px 12px;
-    border-radius: 50px;
-    border: 2px solid #ffb3cb;
-    font-family: 'Nunito', sans-serif;
-    font-size: .95rem;
-    font-weight: 800;
-    text-align: center;
-    color: var(--dark);
-    outline: none;
-    background: #fff;
-  }
-  .target-row input:focus { border-color: var(--pink); }
+.target-row {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+max-width: 380px;
+margin: 0 auto 24px;
+}
+.target-row label { font-weight: 700; color: #1a3a6e; font-size: .9rem; }
+.target-row input {
+width: 80px;
+padding: 8px 12px;
+border-radius: 50px;
+border: 2px solid #90b8e8;
+font-family: ‘Nunito’, sans-serif;
+font-size: .95rem;
+font-weight: 800;
+text-align: center;
+color: var(–dark);
+outline: none;
+background: var(–white);
+}
+.target-row input:focus { border-color: var(–blue); }
 
-  .card-winner {
-    outline: 4px solid var(--yellow);
-    outline-offset: 2px;
-  }
-  .card-winner .score-number { color: #e07000; }
+.card-winner {
+outline: 4px solid var(–blue-dark);
+outline-offset: 2px;
+}
+.card-winner .score-number { color: var(–black); }
 </style>
+
 </head>
 <body>
 
@@ -393,12 +394,12 @@
 
 <script>
 const COLORS = [
-  { bg: '#ffe0ec', emoji: '🐷' },
-  { bg: '#fff3cd', emoji: '🐽' },
-  { bg: '#d4f0ff', emoji: '🐖' },
-  { bg: '#d8f8e8', emoji: '🥓' },
-  { bg: '#ede0ff', emoji: '🐷' },
-  { bg: '#ffe8d6', emoji: '🐽' },
+  { bg: '#e3f0ff', emoji: '🐷' },
+  { bg: '#e8edf5', emoji: '🐽' },
+  { bg: '#d0e8ff', emoji: '🐖' },
+  { bg: '#c8d8f0', emoji: '🥓' },
+  { bg: '#ddeeff', emoji: '🐷' },
+  { bg: '#eef4ff', emoji: '🐽' },
 ];
 
 let players = [];
@@ -482,7 +483,6 @@ function startEdit(idx) {
   const scoreEl = document.getElementById(`score-${idx}`);
   const currentScore = players[idx].score;
 
-  // Replace the score display with an input
   const input = document.createElement('input');
   input.type = 'number';
   input.value = currentScore;
@@ -575,5 +575,6 @@ document.getElementById('name-input').addEventListener('keydown', e => {
 
 document.getElementById('target-input').addEventListener('input', renderPlayers);
 </script>
+
 </body>
 </html>
