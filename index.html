@@ -17,7 +17,6 @@
     --black: #0f0f0f;
     --dark: #1a1a2e;
     --white: #ffffff;
-    --grey: #e8edf5;
     --radius: 20px;
   }
 
@@ -29,9 +28,19 @@ min-height: 100vh;
 padding: 20px;
 color: var(–dark);
 background-color: #ddeeff;
-background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘120’ height=‘120’%3E%3Ctext x=‘10’ y=‘40’ font-size=‘28’ opacity=‘0.12’%3E%F0%9F%90%B7%3C/text%3E%3Ctext x=‘65’ y=‘85’ font-size=‘22’ opacity=‘0.12’%3E%F0%9F%90%B7%3C/text%3E%3Ctext x=‘55’ y=‘38’ font-size=‘26’ fill=’%230d47a1’ opacity=‘0.2’ font-family=‘sans-serif’%3E%E2%9A%A1%3C/text%3E%3Ctext x=‘5’ y=‘95’ font-size=‘22’ fill=’%230d47a1’ opacity=‘0.2’ font-family=‘sans-serif’%3E%E2%9A%A1%3C/text%3E%3C/svg%3E”);
-background-repeat: repeat;
-background-size: 120px 120px;
+}
+
+#bg-canvas {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+pointer-events: none;
+z-index: 0;
+}
+
+body > *:not(#bg-canvas) {
+position: relative;
+z-index: 1;
 }
 
 h1 {
@@ -67,13 +76,23 @@ border: 2px solid #90b8e8;
 font-family: ‘Nunito’, sans-serif;
 font-size: 1rem;
 font-weight: 700;
-background: var(–white);
+background: var(–white) !important;
 outline: none;
-color: var(–dark);
+color: var(–dark) !important;
 transition: border-color .2s;
+-webkit-appearance: none;
+appearance: none;
 }
 .add-bar input::placeholder { color: #90b8e8; }
 .add-bar input:focus { border-color: var(–blue); }
+
+.btn, .score-btn, .remove-btn {
+-webkit-appearance: none;
+appearance: none;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
 
 .btn {
 padding: 14px 22px;
@@ -88,8 +107,8 @@ transition: transform .1s, box-shadow .1s;
 .btn:active { transform: scale(.96); }
 
 .btn-add {
-background: var(–blue);
-color: var(–white);
+background: var(–blue) !important;
+color: var(–white) !important;
 box-shadow: 0 4px 0 var(–blue-dark);
 }
 .btn-add:active { box-shadow: 0 1px 0 var(–blue-dark); transform: translateY(3px); }
@@ -103,7 +122,7 @@ margin: 0 auto 30px;
 }
 
 .player-card {
-background: rgba(255,255,255,0.94);
+background: rgba(255,255,255,0.94) !important;
 backdrop-filter: blur(4px);
 border-radius: var(–radius);
 padding: 22px 22px 18px;
@@ -144,17 +163,17 @@ text-overflow: ellipsis;
 }
 
 .remove-btn {
-background: none;
+background: none !important;
 border: none;
 cursor: pointer;
-color: #90b8e8;
+color: #90b8e8 !important;
 font-size: 1.1rem;
 line-height: 1;
 padding: 4px;
 border-radius: 50%;
 transition: color .2s, background .2s;
 }
-.remove-btn:hover { color: var(–blue-dark); background: var(–blue-pale); }
+.remove-btn:hover { color: var(–blue-dark) !important; background: var(–blue-pale) !important; }
 
 .score-display {
 text-align: center;
@@ -165,7 +184,7 @@ margin-bottom: 10px;
 font-family: ‘Lilita One’, cursive;
 font-size: 4rem;
 line-height: 1;
-color: var(–blue);
+color: var(–blue) !important;
 text-shadow: 2px 2px 0 rgba(21,101,192,.2);
 cursor: pointer;
 border-radius: 12px;
@@ -197,6 +216,8 @@ padding: 4px 10px;
 outline: none;
 background: var(–blue-pale);
 box-shadow: 0 0 0 4px rgba(21,101,192,.12);
+-webkit-appearance: none;
+appearance: none;
 }
 
 .score-label {
@@ -246,13 +267,12 @@ text-align: center;
 .score-btn:active { transform: scale(.93); filter: brightness(.9); }
 .score-btn .pts { display: block; font-size: 1.1rem; }
 
-/* Score buttons: blue tones + black/white accents */
-.s1  { background:#e3f0ff; color:#0d47a1; box-shadow:0 3px 0 #90b8e8; }
-.s5  { background:#e8edf5; color:#1a1a2e; box-shadow:0 3px 0 #b0bcd0; }
-.s10 { background:#1565c0; color:#ffffff; box-shadow:0 3px 0 #0d47a1; }
-.s15 { background:#0d47a1; color:#ffffff; box-shadow:0 3px 0 #082f6e; }
-.s20 { background:#0f0f0f; color:#ffffff; box-shadow:0 3px 0 #000000; }
-.sog { background:#1e88e5; color:#ffffff; box-shadow:0 3px 0 #1565c0; }
+.s1  { background:#e3f0ff !important; color:#0d47a1 !important; box-shadow:0 3px 0 #90b8e8; }
+.s5  { background:#e8edf5 !important; color:#1a1a2e !important; box-shadow:0 3px 0 #b0bcd0; }
+.s10 { background:#1565c0 !important; color:#ffffff !important; box-shadow:0 3px 0 #0d47a1; }
+.s15 { background:#0d47a1 !important; color:#ffffff !important; box-shadow:0 3px 0 #082f6e; }
+.s20 { background:#0f0f0f !important; color:#ffffff !important; box-shadow:0 3px 0 #000000; }
+.sog { background:#1e88e5 !important; color:#ffffff !important; box-shadow:0 3px 0 #1565c0; }
 .score-btn:active { box-shadow: none !important; transform: translateY(3px) scale(.97); }
 
 .card-actions {
@@ -262,8 +282,8 @@ gap: 7px;
 
 .btn-undo {
 flex: 1;
-background: #e8edf5;
-color: #555;
+background: #e8edf5 !important;
+color: #555 !important;
 box-shadow: 0 3px 0 #b0bcd0;
 font-size: .85rem;
 }
@@ -271,8 +291,8 @@ font-size: .85rem;
 
 .btn-bank {
 flex: 1;
-background: var(–blue);
-color: var(–white);
+background: var(–blue) !important;
+color: var(–white) !important;
 box-shadow: 0 3px 0 var(–blue-dark);
 font-size: .85rem;
 }
@@ -280,8 +300,8 @@ font-size: .85rem;
 
 .btn-pig {
 flex: 1;
-background: var(–black);
-color: var(–white);
+background: var(–black) !important;
+color: var(–white) !important;
 box-shadow: 0 3px 0 #000;
 font-size: .85rem;
 }
@@ -290,7 +310,7 @@ font-size: .85rem;
 .winner-banner {
 display: none;
 text-align: center;
-background: linear-gradient(135deg, var(–blue), var(–blue-dark));
+background: linear-gradient(135deg, var(–blue), var(–blue-dark)) !important;
 border-radius: var(–radius);
 padding: 24px;
 max-width: 480px;
@@ -302,13 +322,13 @@ animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both;
 .winner-banner h2 {
 font-family: ‘Lilita One’, cursive;
 font-size: 2rem;
-color: var(–white);
+color: var(–white) !important;
 text-shadow: 2px 2px 0 rgba(0,0,0,.25);
 margin-bottom: 4px;
 }
 
 .winner-banner p {
-color: rgba(255,255,255,.9);
+color: rgba(255,255,255,.9) !important;
 font-weight: 700;
 font-size: 1rem;
 }
@@ -319,13 +339,13 @@ margin-top: 10px;
 }
 
 .btn-reset {
-background: var(–white);
-color: var(–blue-dark);
-border: 2px solid #90b8e8;
+background: var(–white) !important;
+color: var(–blue-dark) !important;
+border: 2px solid #90b8e8 !important;
 padding: 12px 28px;
 font-size: .95rem;
 }
-.btn-reset:hover { background: var(–blue-pale); }
+.btn-reset:hover { background: var(–blue-pale) !important; }
 
 .history-line {
 font-size: .72rem;
@@ -356,7 +376,9 @@ font-weight: 800;
 text-align: center;
 color: var(–dark);
 outline: none;
-background: var(–white);
+background: var(–white) !important;
+-webkit-appearance: none;
+appearance: none;
 }
 .target-row input:focus { border-color: var(–blue); }
 
@@ -364,11 +386,13 @@ background: var(–white);
 outline: 4px solid var(–blue-dark);
 outline-offset: 2px;
 }
-.card-winner .score-number { color: var(–black); }
+.card-winner .score-number { color: var(–black) !important; }
 </style>
 
 </head>
 <body>
+
+<canvas id="bg-canvas"></canvas>
 
 <h1>🐷 Tampa Pig Toss</h1>
 <p class="subtitle">Eat up lil' Piggies!</p>
@@ -395,6 +419,53 @@ outline-offset: 2px;
 </div>
 
 <script>
+// ── Background canvas: pigs + lightning bolts ──────────────
+(function() {
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  const TILE = 120;
+
+  function drawPattern() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const cols = Math.ceil(canvas.width / TILE) + 1;
+    const rows = Math.ceil(canvas.height / TILE) + 1;
+
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = c * TILE;
+        const y = r * TILE;
+
+        ctx.globalAlpha = 0.13;
+        ctx.font = '28px serif';
+        ctx.fillStyle = '#000';
+        ctx.fillText('🐷', x + 10, y + 40);
+
+        ctx.globalAlpha = 0.10;
+        ctx.font = '22px serif';
+        ctx.fillText('🐷', x + 65, y + 85);
+
+        ctx.globalAlpha = 0.22;
+        ctx.fillStyle = '#0d47a1';
+        ctx.font = 'bold 26px sans-serif';
+        ctx.fillText('⚡', x + 55, y + 38);
+
+        ctx.globalAlpha = 0.17;
+        ctx.font = 'bold 22px sans-serif';
+        ctx.fillText('⚡', x + 5, y + 95);
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  drawPattern();
+  window.addEventListener('resize', drawPattern);
+  window.addEventListener('scroll', drawPattern);
+})();
+
+// ── Game logic ─────────────────────────────────────────────
 const COLORS = [
   { bg: '#e3f0ff', emoji: '🐷' },
   { bg: '#e8edf5', emoji: '🐽' },
