@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <title>🐷 Tampa Pig Toss Tracker</title>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: only light;
@@ -18,12 +17,14 @@
     --dark: #1a1a2e;
     --white: #ffffff;
     --radius: 20px;
+    --font-display: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    --font-body: 'Arial Rounded MT Bold', 'Arial', sans-serif;
   }
 
 - { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-font-family: ‘Nunito’, sans-serif;
+font-family: var(–font-body);
 min-height: 100vh;
 padding: 20px;
 color: var(–dark);
@@ -44,21 +45,24 @@ z-index: 1;
 }
 
 h1 {
-font-family: ‘Lilita One’, cursive;
-font-size: clamp(2rem, 6vw, 3.5rem);
+font-family: var(–font-display);
+font-size: clamp(1.8rem, 6vw, 3.2rem);
+font-weight: 900;
 text-align: center;
 color: var(–blue-dark);
 text-shadow: 3px 3px 0 #90b8e8, 5px 5px 0 rgba(21,101,192,0.15);
 margin-bottom: 6px;
 letter-spacing: 1px;
+text-transform: uppercase;
 }
 
 .subtitle {
 text-align: center;
 color: #1a3a6e;
-font-weight: 600;
+font-weight: 700;
 margin-bottom: 28px;
 font-size: 1rem;
+font-family: var(–font-body);
 }
 
 .add-bar {
@@ -73,7 +77,7 @@ flex: 1;
 padding: 14px 18px;
 border-radius: 50px;
 border: 2px solid #90b8e8;
-font-family: ‘Nunito’, sans-serif;
+font-family: var(–font-body);
 font-size: 1rem;
 font-weight: 700;
 background: var(–white) !important;
@@ -98,7 +102,7 @@ justify-content: center;
 padding: 14px 22px;
 border-radius: 50px;
 border: none;
-font-family: ‘Nunito’, sans-serif;
+font-family: var(–font-body);
 font-weight: 800;
 font-size: .95rem;
 cursor: pointer;
@@ -153,13 +157,16 @@ box-shadow: 0 3px 0 rgba(0,0,0,.10);
 }
 
 .player-name {
-font-family: ‘Lilita One’, cursive;
-font-size: 1.25rem;
+font-family: var(–font-display);
+font-size: 1.15rem;
+font-weight: 900;
 color: var(–dark);
 flex: 1;
 white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
+text-transform: uppercase;
+letter-spacing: .5px;
 }
 
 .remove-btn {
@@ -181,11 +188,11 @@ margin-bottom: 10px;
 }
 
 .score-number {
-font-family: ‘Lilita One’, cursive;
-font-size: 4rem;
+font-family: var(–font-display);
+font-size: 4.5rem;
+font-weight: 900;
 line-height: 1;
 color: var(–blue) !important;
-text-shadow: 2px 2px 0 rgba(21,101,192,.2);
 cursor: pointer;
 border-radius: 12px;
 padding: 4px 10px;
@@ -204,8 +211,9 @@ animation: bump .3s cubic-bezier(.34,1.56,.64,1);
 }
 
 .score-edit-input {
-font-family: ‘Lilita One’, cursive;
+font-family: var(–font-display);
 font-size: 3.5rem;
+font-weight: 900;
 line-height: 1;
 color: var(–blue);
 text-align: center;
@@ -221,12 +229,13 @@ appearance: none;
 }
 
 .score-label {
-font-size: .8rem;
-font-weight: 700;
+font-size: .75rem;
+font-weight: 800;
 color: #4a7ab5;
 text-transform: uppercase;
-letter-spacing: 1.5px;
+letter-spacing: 2px;
 margin-top: 2px;
+font-family: var(–font-body);
 }
 
 .edit-hint {
@@ -234,15 +243,17 @@ font-size: .7rem;
 color: #90b8e8;
 font-weight: 600;
 margin-top: 2px;
+font-family: var(–font-body);
 }
 
 .turn-points {
 text-align: center;
 font-size: .85rem;
-font-weight: 700;
+font-weight: 800;
 color: var(–blue-light);
 min-height: 20px;
 margin-bottom: 10px;
+font-family: var(–font-body);
 }
 
 .score-grid {
@@ -256,7 +267,7 @@ margin-bottom: 10px;
 border: none;
 border-radius: 12px;
 padding: 8px 4px;
-font-family: ‘Nunito’, sans-serif;
+font-family: var(–font-body);
 font-weight: 800;
 font-size: .78rem;
 cursor: pointer;
@@ -265,7 +276,7 @@ line-height: 1.2;
 text-align: center;
 }
 .score-btn:active { transform: scale(.93); filter: brightness(.9); }
-.score-btn .pts { display: block; font-size: 1.1rem; }
+.score-btn .pts { display: block; font-size: 1.05rem; font-weight: 900; }
 
 .s1  { background:#e3f0ff !important; color:#0d47a1 !important; box-shadow:0 3px 0 #90b8e8; }
 .s5  { background:#e8edf5 !important; color:#1a1a2e !important; box-shadow:0 3px 0 #b0bcd0; }
@@ -285,7 +296,9 @@ flex: 1;
 background: #e8edf5 !important;
 color: #555 !important;
 box-shadow: 0 3px 0 #b0bcd0;
-font-size: .85rem;
+font-size: .82rem;
+font-family: var(–font-body);
+font-weight: 800;
 }
 .btn-undo:active { box-shadow: none; transform: translateY(3px); }
 
@@ -294,7 +307,9 @@ flex: 1;
 background: var(–blue) !important;
 color: var(–white) !important;
 box-shadow: 0 3px 0 var(–blue-dark);
-font-size: .85rem;
+font-size: .82rem;
+font-family: var(–font-body);
+font-weight: 800;
 }
 .btn-bank:active { box-shadow: none; transform: translateY(3px); }
 
@@ -303,7 +318,9 @@ flex: 1;
 background: var(–black) !important;
 color: var(–white) !important;
 box-shadow: 0 3px 0 #000;
-font-size: .85rem;
+font-size: .82rem;
+font-family: var(–font-body);
+font-weight: 800;
 }
 .btn-pig:active { box-shadow: none; transform: translateY(3px); }
 
@@ -320,17 +337,20 @@ animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both;
 }
 
 .winner-banner h2 {
-font-family: ‘Lilita One’, cursive;
+font-family: var(–font-display);
 font-size: 2rem;
+font-weight: 900;
 color: var(–white) !important;
 text-shadow: 2px 2px 0 rgba(0,0,0,.25);
 margin-bottom: 4px;
+text-transform: uppercase;
 }
 
 .winner-banner p {
 color: rgba(255,255,255,.9) !important;
 font-weight: 700;
 font-size: 1rem;
+font-family: var(–font-body);
 }
 
 .footer {
@@ -344,16 +364,19 @@ color: var(–blue-dark) !important;
 border: 2px solid #90b8e8 !important;
 padding: 12px 28px;
 font-size: .95rem;
+font-family: var(–font-body);
+font-weight: 800;
 }
 .btn-reset:hover { background: var(–blue-pale) !important; }
 
 .history-line {
 font-size: .72rem;
 color: #4a7ab5;
-font-weight: 600;
+font-weight: 700;
 text-align: center;
 min-height: 16px;
 margin-top: 4px;
+font-family: var(–font-body);
 }
 
 .target-row {
@@ -364,13 +387,18 @@ gap: 10px;
 max-width: 380px;
 margin: 0 auto 24px;
 }
-.target-row label { font-weight: 700; color: #1a3a6e; font-size: .9rem; }
+.target-row label {
+font-weight: 800;
+color: #1a3a6e;
+font-size: .9rem;
+font-family: var(–font-body);
+}
 .target-row input {
 width: 80px;
 padding: 8px 12px;
 border-radius: 50px;
 border: 2px solid #90b8e8;
-font-family: ‘Nunito’, sans-serif;
+font-family: var(–font-body);
 font-size: .95rem;
 font-weight: 800;
 text-align: center;
